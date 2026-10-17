@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e ".[dev,service]"
+      - run: ruff check .
+      - run: mypy
+      - run: pytest
+      # The quality gate: the golden set must not regress against the
+      # committed baselines. Deterministic, offline, no API key needed.
+      - run: python -m archivist.cli eval --strategy plain-rag agentic

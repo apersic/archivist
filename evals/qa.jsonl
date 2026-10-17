@@ -1,0 +1,15 @@
+// Golden set. One JSON object per line; `//` lines are comments.
+// `relevant_sources` is labelled against document paths, not chunk ids, so the
+// labels survive a change of chunking strategy.
+{"question": "What error code does Pelican return when an API key exceeds its rate limit?", "relevant_sources": ["platform/pelican-ingestion.md"], "must_contain": ["PEL-429"], "tags": ["lookup", "identifier"]}
+{"question": "What is the retention period for events_raw?", "relevant_sources": ["policies/data-retention.md"], "must_contain": ["30 days"], "tags": ["lookup", "policy"]}
+{"question": "Which job writes the events_curated table?", "relevant_sources": ["platform/warehouse-tables.md"], "must_contain": ["Heron"], "tags": ["lookup", "ownership"]}
+{"question": "What is the p95 latency budget for the Kestrel search endpoint?", "relevant_sources": ["platform/kestrel-search.md"], "must_contain": ["180"], "tags": ["lookup", "number"]}
+{"question": "How long must a verified subject deletion request take to complete?", "relevant_sources": ["policies/data-retention.md"], "must_contain": ["30 calendar days"], "tags": ["lookup", "policy"]}
+{"question": "Which team owns the Heron transform job and is paged when it lags?", "relevant_sources": ["platform/warehouse-tables.md", "runbooks/on-call.md"], "must_contain": ["Data Platform"], "tags": ["multi-hop", "ownership"]}
+{"question": "Why does a Kestrel index lag page often reach the wrong team?", "relevant_sources": ["platform/kestrel-search.md", "runbooks/on-call.md"], "must_contain": ["Heron"], "tags": ["multi-hop", "reasoning"]}
+{"question": "What should on-call do first when many API keys are rate limited at once?", "relevant_sources": ["runbooks/on-call.md"], "must_contain": ["retry storm"], "tags": ["procedure"]}
+{"question": "Can a deletion request remove rows from billing_usage?", "relevant_sources": ["policies/data-retention.md"], "must_contain": ["statutory"], "tags": ["policy", "negative"]}
+{"question": "Is Heron safe to rerun over a window it already processed?", "relevant_sources": ["runbooks/on-call.md"], "must_contain": ["idempotent"], "tags": ["procedure", "yes-no"]}
+{"question": "What is the Pelican service's quarterly cloud spend?", "relevant_sources": [], "must_contain": [], "unanswerable": true, "tags": ["abstention"]}
+{"question": "Which vendor supplies the Kestrel hardware security module?", "relevant_sources": [], "must_contain": [], "unanswerable": true, "tags": ["abstention"]}

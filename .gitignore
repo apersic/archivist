@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# built indexes and ad-hoc eval reports; baselines in evals/baselines are committed
+.archivist/
+evals/reports/
+evals/drafts.jsonl
+
+.env
+.DS_Store

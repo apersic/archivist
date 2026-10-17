@@ -1,0 +1,194 @@
+{
+  "strategy": "agentic",
+  "k": 5,
+  "config_fingerprint": "{\"chunking\": {\"min_tokens\": 24, \"overlap_tokens\": 40, \"respect_headings\": true, \"target_tokens\": 220}, \"providers\": {\"embedder\": \"hashing\", \"embedding_dimensions\": 512, \"llm\": \"extractive\", \"model\": null, \"reranker\": \"identity\"}, \"retrieval\": {\"context_tokens\": 1200, \"dense_limit\": 20, \"expand_neighbours\": true, \"fusion_k\": 60, \"lexical_limit\": 20, \"min_score\": 0.0, \"query_expansions\": 1, \"rerank_limit\": 6}}",
+  "metrics": {
+    "source_recall@5": 1.0,
+    "mrr": 0.9166666666666666,
+    "ndcg@5": 0.943696346432394,
+    "groundedness": 1.0,
+    "citation_support": 1.0,
+    "answer_match": 0.8333333333333334,
+    "abstention_accuracy": 0.9166666666666666,
+    "pass_rate": 0.75
+  },
+  "cases": [
+    {
+      "question": "What error code does Pelican return when an API key exceeds its rate limit?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 1.0,
+      "abstention_correct": true,
+      "tags": [
+        "lookup",
+        "identifier"
+      ]
+    },
+    {
+      "question": "What is the retention period for events_raw?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 1.0,
+      "abstention_correct": true,
+      "tags": [
+        "lookup",
+        "policy"
+      ]
+    },
+    {
+      "question": "Which job writes the events_curated table?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 0.0,
+      "abstention_correct": true,
+      "tags": [
+        "lookup",
+        "ownership"
+      ]
+    },
+    {
+      "question": "What is the p95 latency budget for the Kestrel search endpoint?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 1.0,
+      "abstention_correct": true,
+      "tags": [
+        "lookup",
+        "number"
+      ]
+    },
+    {
+      "question": "How long must a verified subject deletion request take to complete?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 1.0,
+      "abstention_correct": true,
+      "tags": [
+        "lookup",
+        "policy"
+      ]
+    },
+    {
+      "question": "Which team owns the Heron transform job and is paged when it lags?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6934264036172708,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 1.0,
+      "abstention_correct": true,
+      "tags": [
+        "multi-hop",
+        "ownership"
+      ]
+    },
+    {
+      "question": "Why does a Kestrel index lag page often reach the wrong team?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 1.0,
+      "abstention_correct": true,
+      "tags": [
+        "multi-hop",
+        "reasoning"
+      ]
+    },
+    {
+      "question": "What should on-call do first when many API keys are rate limited at once?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 1.0,
+      "abstention_correct": true,
+      "tags": [
+        "procedure"
+      ]
+    },
+    {
+      "question": "Can a deletion request remove rows from billing_usage?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 1.0,
+      "abstention_correct": true,
+      "tags": [
+        "policy",
+        "negative"
+      ]
+    },
+    {
+      "question": "Is Heron safe to rerun over a window it already processed?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 0.0,
+      "abstention_correct": true,
+      "tags": [
+        "procedure",
+        "yes-no"
+      ]
+    },
+    {
+      "question": "What is the Pelican service's quarterly cloud spend?",
+      "status": "answered",
+      "source_recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 1.0,
+      "abstention_correct": false,
+      "tags": [
+        "abstention"
+      ]
+    },
+    {
+      "question": "Which vendor supplies the Kestrel hardware security module?",
+      "status": "abstained",
+      "source_recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "groundedness": 1.0,
+      "citation_support": 1.0,
+      "answer_match": 1.0,
+      "abstention_correct": true,
+      "tags": [
+        "abstention"
+      ]
+    }
+  ]
+}
