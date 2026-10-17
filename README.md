@@ -112,6 +112,17 @@ make eval     # golden set + regression gate
 make check    # all of the above
 ```
 
+Without `make` (Windows PowerShell, for example), the targets are one command each:
+
+```powershell
+python -m venv .venv; .venv\Scripts\Activate.ps1
+pip install -e ".[dev]"
+python -m pytest
+python -m ruff check .
+python -m mypy
+python -m archivist.cli eval --strategy plain-rag agentic
+```
+
 The tests are deterministic because the default LLM is. They assert on system
 properties that hold for any model: citations resolve to real chunks, invented
 citation markers are stripped, empty retrieval abstains without calling the
