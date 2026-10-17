@@ -19,3 +19,6 @@ evals/drafts.jsonl
 
 .env
 .DS_Store
+
+# local planning notes
+ROADMAP.md
