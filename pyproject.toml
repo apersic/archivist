@@ -14,7 +14,9 @@ openai = ["openai>=1.40"]
 local-embeddings = ["sentence-transformers>=3.0"]
 pgvector = ["psycopg[binary]>=3.2", "pgvector>=0.3"]
 service = ["fastapi>=0.115", "uvicorn>=0.30", "sse-starlette>=2.1"]
-dev = ["pytest>=8.0", "pytest-cov>=5.0", "ruff>=0.6", "mypy>=1.11"]
+# httpx2 is what Starlette's TestClient imports. The service tests fail
+# collection without it once the `service` extra is installed.
+dev = ["pytest>=8.0", "pytest-cov>=5.0", "ruff>=0.6", "mypy>=1.11", "httpx2>=2"]
 
 [project.scripts]
 archivist = "archivist.cli:main"
