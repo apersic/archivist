@@ -32,7 +32,9 @@ def _title_from_markdown(text: str, fallback: str) -> str:
 def load_text_file(path: Path, root: Path) -> Document:
     raw = path.read_text(encoding="utf-8", errors="replace")
     text = re.sub(r"\r\n?", "\n", raw).strip()
-    source = str(path.relative_to(root)) if path.is_relative_to(root) else str(path)
+    # Eval labels and citations use POSIX paths so they match on every OS.
+    relative = path.relative_to(root) if path.is_relative_to(root) else path
+    source = relative.as_posix()
     return Document(
         doc_id=_stable_id("doc", source),
         text=text,
